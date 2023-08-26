@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>GSoC Final Report</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Draco is free PSD &amp; HTML template by @afnizarnur">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="css/kube.min.css" />
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+	<link rel="stylesheet" href="css/custom.min.css" />
+	<link rel="shortcut icon" href="img/favicon.png" />
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	<style>
+		.intro h1:before {
+			content: 'Vedant';
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Navigation -->
+	<div class="main-nav">
+		<div class="container">
+			<header class="group top-nav"><!---
+				<div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1">
+				    <span class="logo">DRACO</span>
+				</div>-->
+				<nav id="navbar-1" class="navbar item-nav">
+					<ul>
+						<li class="active"><a href="#about">About</a></li>
+						<li><a href="#requirements/goals">Deliverables</a></li>
+						<li><a href="#ProjectSummary">Development Summary</a></li>
+						<li><a href="#Coding">Work-status</a></li>
+						<li><a href="#Challenges">Impact</a></li>
+						<li><a href="#futureScope">Future Scope</a></li>
+					</ul>
+				</nav>
+			</header>
+		</div>
+	</div>
+
+	<!-- Introduction -->
+	<div class="intro section" id="about">
+		<div class="container">
+			<p>GSoC 2023</p>
+			<div class="units-row units-split wrap">
+				<div class="unit-20">
+					<img src="img/ava.jpg" alt="Avatar">
+				</div>
+				<div class="unit-80">
+					<h1>SPDX<br><span id="typed"></span></h1>
+				</div>
+				<p>
+					SPDX had a requirement to have a “Private license management system”. A web-based system for
+					managing license texts; like the SPDX License List but oriented towards other private collections of
+					licenses.
+					<br>
+					<strong>Mentor: </strong> <a href="https://github.com/spdx-online-tools">Jilayne Lovejoy and Rohit
+						Lodha</a><br>
+					<strong>Contributor: </strong>Vedant Jolly
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- About -->
+	<div class="work section second" id="requirements/goals">
+		<div class="container">
+			<h1>Deliverables</h1>
+			<p>
+				The primary objective of this project is to improve the functionality of the existing online tool,
+				thereby increasing the efficiency of license submissions. By doing so, we intend to reduce the workload
+				of the SPDX-legal team and ensure that the entire process is streamlined and hassle-free. Our ultimate
+				goal is to create a user-friendly platform that simplifies license submission, saves time, and enhances
+				overall productivity.</p>
+			<ol>
+				<li><strong>Generate the .txt test file in the pull request (PR) along with the XML file:</strong> This
+					feature will
+					enhance the current capability of the tool to create the XML file by also creating a .txt test file
+					in the PR, thus making the submission process more efficient.</li>
+				<li><strong>Differentiate exceptions from license submissions:</strong> The tool will be able to
+					differentiate between
+					exceptions and license submissions, which will improve the overall efficiency of the process.
+				</li>
+				<li><strong>Add or fix unit tests & Improve error handling:</strong> This feature will ensure that the
+					tool is
+					functioning properly, and any errors are caught early in the process. Error handling will be
+					improved, especially when GitHub pull requests fail, which will reduce manual intervention and
+					increase the tool's efficiency.</li>
+				<ul>
+					<li>Write GitHub tests with mocks</li>
+					<li>Separate tests in multiple files</li>
+					<li>Adding tests for edge</li>
+					<li>Tests for UI on browser e.g.: Chrome</li>
+				</ul>
+				<li><strong>Add linters to the project - python/js/html/css linters:</strong> This will ensure that the
+					code adheres to
+					the coding standards and best practices, leading to better code quality.</li>
+				<li>
+					<strong>General UI Improvements:</strong> This will help the application be more user-friendly and
+					will make the app
+					more accessible. Issues which I have planned to cover in this:
+					<ul>
+						<li>Redirect on Successful License Submission</li>
+						<li>Improving the Toast Messages</li>
+						<li>Improving the License Text Display on GitHub Issue Section</li>
+					</ul>
+				</li>
+			</ol>
+			</p>
+			</p>
+		</div>
+	</div>
+
+	<!-- Project Summary -->
+	<div class="award section second" id="ProjectSummary">
+		<div class="container">
+			<h1>Development<br>Summary</h1>
+			<!-- We developed a Web based Application with a consideration to use open source Technologies. The Application
+			was created on a Three tier architecture with Light front end tier, all business functionality included in
+			the Middle tier and Database as the Data Tier.
+			<br>
+			<ol>
+				<li><strong>Front end Tier:</strong> Front end was developed using the HTML, CSS, JavaScript, jQuery,
+					Boot strap, Chart.js. The images are taken from <a href="https://www.freepik.com/">Adobe stock.<a>
+				</li>
+				<li><strong>Middle Tier:</strong> the Business logic was developed on Python Django.</li>
+				<li><strong>Back End/ Data Layer:</strong> SQLite was the database we choose to persist the data.</li>
+			</ol>
+			<br>
+			<p>Modules were created in the application with provisioning the User management, License data management,
+				UI Analytics. Each of the Modules is explained in detail in the below sections.</p>
+
+			<p> -->
+			<h3>Generate the .txt file in the PR along with the XML File</h3>
+			<br>
+			To implement this feature, we would need to make changes to the current codebase of the SPDX online tool.
+			When a user submits a new license request through the tool, the tool generates an XML file and submits a PR
+			to the SPDX License List GitHub repository. To generate a .txt test file in addition to the XML file, we
+			would need to modify the existing code to extract the necessary information from the user's input and create
+			a text file with the required details.
+			<br />
+			<p>
+				To achieve this, we would need to modify the following files:
+			<ol>
+				<li><strong>`views.py`:</strong>
+					This file is responsible for handling the submission of new license requests through the tool. We
+					would need to modify this file to
+				</li>
+				<li><strong>`generateXml.py`:</strong>
+					This file is responsible for generating the XML file for each license request. We would need to
+					modify this file to extract the necessary information from the user's input and use it to generate
+					the .txt test file.
+					<!-- <ul>
+						<li>User Role Maintenance: Create, Modify and Delete User Roles.</li>
+						<li>User Maintenance: Create, Modify and Delete Users. Each User in the system would be
+							associated to one or more Roles.</li>
+						<li>Super set of Other Roles: Admin User can act as an Uploader, Approver and Publisher which
+							means all the functionalities available for these roles would be available to Admin role as
+							well.</li>
+						<li>Override Status: Admin Role has access to all the License data and Status and can change it
+							directly in the system at any point in time. He can override the Process and update the
+							license status.</li>
+					</ul> -->
+				</li>
+				<!-- <li><strong>Uploader Role:</strong>
+					User with the uploader Role can perform the following actions:
+					<ul>
+						<li>Upload a new License into the system and submit for approval.</li>
+						<li>View all Licenses in the System.</li>
+						<li>Modify Licenses which are in status New and Rejected.</li>
+					</ul>
+				</li>
+				<li><strong>Approver Role:</strong>
+					User with the Approver Role can perform the following actions:
+					<ul>
+						<li>View all Licenses in the System.</li>
+						<li>Approve a New License/ Rejected License that is submitted for approval.</li>
+					</ul>
+				</li>
+
+				<li><strong>Publisher Role:</strong>
+					User with the Publisher Role can perform the following actions:
+					<ul>
+						<li>View all Licenses in the System.</li>
+						<li>Publish one or more Approved Licenses in the system.</li>
+					</ul>
+				</li> -->
+			</ol>
+			</p>
+
+			<p>
+			<h3>Differentiate Exceptions from License Submission</h3>
+			<br>
+			To implement this feature, we will need to add a checkbox in the submission form to indicate whether the
+			submission is for a license or an exception. This will allow the tool to differentiate between a license and
+			an exception and use the appropriate tag when creating the XML file and the pull request.
+			<br />
+			To achieve this, we will first modify the submission form to include the checkbox, which will then be
+			included in the POST request sent to the server. We will then modify the server code to process the checkbox
+			and use the appropriate tag when creating the XML file.
+			<p>
+				<!-- <ol>
+				<li><strong>License Upload</strong>
+					This Module covers the Functionalities around the License Upload Flow.
+					<img src="img/licenseUpload.png"><br>
+					The list of processes the new License data goes through are detailed as below. Only when a step is
+					successful, data is passed on to the next step, incase of any validation Error the error is thrown
+					back to the user.
+					<ul>
+						<li>Mandatory Field Validations:
+							The Mandatory fields in the License entry form are validated here.
+							<ul>
+								<li>Canonicalization:
+									The requirements are not finalized. We are approaching this problem in two steps as
+									part of this version:
+								</li>
+								<li>The license data is simplified according to SPDX License List Matching Guidelines,
+									v2.1 (https://spdx.dev/license-list/matching-guidelines/ ) where Guidelines 3,
+									Guidelines 4, Guidelines 5, Guidelines 8, Guidelines 9 and Guidelines 13 have been
+									implemented.
+								</li>
+								<li>De-Duplication:
+									This process checks if the license that is uploaded already exists in the system.
+									The validation is based on the License contents and certain key fields
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><strong>License Approve</strong>
+					<img src="img/licenseApprove.png"><br>
+					The list of processes in the License Approval flow is included in this process. User selects the
+					lists of Available licenses for approval, these would include new Licenses submitted for approval OR
+					rejected licenses modified and submitted for approval.
+				</li>
+
+				<li><strong>License Publish</strong>
+					<img src="img/licensePublish.png"><br>
+					This flow includes process to Publish the Approved files in the system. User selects Approved
+					licenses in the system and publishes them. There would be an option to Edit OR Add the Header fields
+					before the data is exported.
+				</li>
+
+				<li><strong>Change Tracking</strong>
+					<img src="img/tracking.png"><br>
+					Every change in the License data is tracked in the system. Every action/ change is associated with a
+					change code and the License file with changes in tracked at the database level. There is an UI to
+					check the list of changes that has undergone for each License file.
+				</li>
+
+			</ol> -->
+				<br>
+			<h3>Add or fix unit tests & Improve error handling</h3>
+			<p>
+				<!-- This module includes all the Analytical reports included in the system. Each user role has access to
+				specific reports. The reports is explained below: -->
+			<ol>
+				<li>
+					<strong></strong>Write GitHub tests with mocks:</strong>
+					<br />
+					To write tests for GitHub API interaction with mock, we will be using the `requests-mock` package.
+					This package allows us to mock requests to any external APIs, including GitHub APIs.
+					To start, we will create a new Python file named `test_github.py` in the tests directory. In this
+					file, we will import the necessary modules and create a test class for the GitHub API tests. We will
+					then create methods for each test case that we want to run.
+				</li>
+				<li>
+					<strong></strong>Separate tests in multiple files:</strong>
+					<br />
+					To separate the current tests for different features, we can create separate files for each feature.
+					For example, we can create a file named `test_license.py` for license related tests and another file
+					named `test_ui.py` for UI tests. Another example would be if there are tests for the XML creator
+					feature, those tests should be in a file named `test_xml_creator.py`.
+					We can then run all the tests using a test runner like` pytest` by specifying the directory where
+					the test files are located. Here is an example command to run all the tests in the tests directory.
+					This makes it easier to manage the tests.
+				</li>
+				<li>
+					<strong></strong>Adding tests for edge cases:</strong>
+					<br />
+					To add tests for edge cases, we need to identify the possible scenarios that may cause issues in our
+					application. For example, we can add tests for license submissions with invalid data, or for
+					exceptions that do not follow the SPDX format.
+				</li>
+				<li>
+					<strong></strong>Tests for UI on browser e.g.: Chrome:</strong>
+					<br />
+					To add UI tests, we can use a testing framework like `Selenium`. Selenium allows us to automate
+					browser interactions and test the functionality of our web application.
+					<br />
+					For testing the UI on a browser like Chrome, we can make use of an automated testing framework like
+					Selenium. Selenium allows us to automate the testing of web applications by simulating user
+					interactions with the web page. We can write tests in Python using the `Selenium WebDriver API`.
+					<br />
+					To implement this feature, we need to install Selenium and the ChromeDriver executable. ChromeDriver
+					is a separate executable that WebDriver uses to control Chrome. Once installed, we can write a
+					Python test script that uses the Selenium WebDriver API to interact with the web application.
+				</li>
+			</ol>
+			</p>
+			<br>
+			<h3>Add linters to the project</h3>
+			<p>
+				<!-- This module includes all the Analytical reports included in the system. Each user role has access to
+				specific reports. The reports is explained below: -->
+				Linters are tools that help identify and report errors in code, helping to ensure that the codebase is
+				of a high quality and follows best practices. The SPDX Online Tools project could benefit from the
+				addition of linters for Python, JavaScript, HTML, and CSS, which would help to identify and fix issues
+				in the codebase.
+				<br>
+				Python linters such as Pylint, Flake8, and Pyflakes can help to identify errors, potential bugs, and
+				code smells in Python code. JavaScript linters like ESLint can detect issues such as unused variables,
+				missing semicolons, and incorrect variable scoping. HTML linters like HTMLHint can check for issues such
+				as invalid markup and accessibility errors. Finally, CSS linters like Stylelint can help identify errors
+				such as invalid selectors, unused styles, and syntax errors.
+				<br>
+				The linters could be integrated into the development process, either through the use of pre-commit hooks
+				or as part of a continuous integration (CI) pipeline. When a developer commits code, the linters would
+				run and report any issues. This would help to catch errors early in the development process, before they
+				become larger problems.
+				The use of linters can also help to improve the readability and maintainability of the codebase. By
+				enforcing consistent coding styles and conventions, the codebase becomes easier to read and understand,
+				and easier to maintain over time.
+				<br>
+				Overall, the addition of linters to the SPDX Online Tools project would help to ensure that the codebase
+				is of a high quality and follows best practices, while also improving the readability and
+				maintainability of the codebase.
+			</p>
+			</p>
+			</p>
+		</div>
+	</div>
+
+	<!-- Coding – Work Status -->
+	<div class="work section second" id="Coding">
+		<div class="container">
+			<h1>Coding/<br>Work-Status</h1>
+			<p>
+				The current Product has been approved by the Mentor and all the code is checked in. The current product
+				requirements and specifications is as agreed with the Mentor. The details as below:
+				<br>
+				Here is the <a href="https://github.com/spdx/spdx-online-tools/commits?author=basscoder2808">list of
+					commits</a> to spdx-online-tools and here is the <a
+					href="https://github.com/spdx/spdx-online-tools/pulls?author=basscoder2808">list of
+					merged pull request</a> made in spdx-online-tools by me during Google Summer of Code 2023.
+				<br>
+
+				You can find more about the tool with installation instruction from this <a
+					href="https://github.com/spdx/spdx-online-tools/blob/main/README.md">README</a>
+			</p>
+			<!-- View the tasks completed per day <a
+				href="https://github.com/RC-002/GSoCSubmission/blob/patches/Daily-Tasks-Tracking.md">here.</a>
+			</p> -->
+		</div>
+	</div>
+
+	<!-- Challenges -->
+	<div class="work section second" id="Challenges">
+		<div class="container">
+			<h1>Project Advantages & its Impact</h1>
+			<p>
+			<ul>
+				<li><strong>Improving Management Efficiency</strong> <br>Adding the proposed functionality will greatly
+					increase the efficiency of license submissions, as it reduces the manual effort required to create
+					and submit new licenses to the SPDX License List repository. The automatic creation of PRs and files
+					such as the .txt test file can save significant time for the SPDX-legal team and contributors.</li>
+
+				<li><strong>Improved Error Handling</strong> <br> By improving error handling, the online tool will be
+					better equipped to handle exceptions and failures that occur during license submissions. This can
+					reduce the time and effort required to troubleshoot and fix errors and can lead to smoother and more
+					efficient workflows.</li>
+
+				<li><strong>Better Testing</strong> <br> The addition of unit tests and GitHub API interaction tests
+					with mock can improve the quality of the codebase and reduce the likelihood of errors or bugs. This
+					can lead to a more robust and reliable online tool, which can benefit the SPDX-legal team and
+					contributors in the long run.</li>
+
+			</ul>
+			Through careful planning and implementation of advanced features, we hope to achieve optimal results and
+			establish the online tool as the go-to resource for license submissions in the industry. These improvements
+			will not only make the tool more user-friendly but also ensure it can evolve over time.
+			</p>
+		</div>
+	</div>
+
+	<!-- Future Scope -->
+	<div class="work section second" id="futureScope">
+		<div class="container">
+			<h1>Future<br>Scope</h1>
+			<p>
+				I idenitified below items as part of Future scope, and could be incorporated:-
+				<br>
+			<ol>
+				<li><strong>Automatically archive or remove the license listing from the online tool UI, once the PR is
+						merged</strong>
+					Once a PR is merged, the GitHub webhook will trigger the API endpoint, which will extract the
+					relevant information from the merged PR, including the license file name, SPDX identifier, and other
+					metadata. The endpoint will then use this information to call the SPDX database API to update the
+					license listing status to "archived".
+				</li>
+				<li><strong>Overhaul SPDX-Online-Tool’s Documentation</strong>
+					With the help of my mentor, I would like to revamp SPDX-Online-Tool’s wiki and documentation and
+					follow standardized guidelines to create documentation for developers as well as users.
+					Documentation is a crucial component of any project which helps newcomers start contributing quickly
+					and I feel we need improvement in that aspect (though an active and helpful community compensates
+					for it at gitter).
+				</li>
+			</ol>
+			</p>
+		</div>
+	</div>
+
+	<!-- Quote -->
+	<div class="quote">
+		<div class="container text-centered">
+			<a href="https://github.com/spdx">
+				<h1>Contribute </h1>
+			</a>
+		</div>
+	</div>
+
+	<footer>
+		<div class="container">
+			<div class="units-row">
+				<div class="unit-50">
+					<p>By Vedant Jolly</p>
+				</div>
+				<div class="unit-50">
+					<ul class="social list-flat right">
+						<li><a href="mailto:vedantjolly2001@gmail.com"><i class="fa fa-send"></i></a></li>
+						<li><a href="https://www.linkedin.com/in/basscoder2808/"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="https://github.com/BassCoder2808"><i class="fa fa-github"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Javascript -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/typed.min.js"></script>
+	<script src="js/kube.min.js"></script>
+	<script src="js/site.js"></script>
+	<script>
+		function newTyped() { } $(function () {
+			$("#typed").typed({
+				// Change to edit type effect
+				strings: ["License Management System", "Final Report", "Contributions/ Future Scope"],
+
+				typeSpeed: 90, backDelay: 700, contentType: "html", loop: !0, resetCallback: function () { newTyped() }
+			}), $(".reset").click(function () { $("#typed").typed("reset") })
+		});
+	</script>
+</body>
+
+</html>
